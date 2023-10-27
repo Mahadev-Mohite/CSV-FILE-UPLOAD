@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/css/home.css">
+
+
+
+<div class="home-container">
+  <h1>CSV Upload</h1>
+  <form action="/file/uploads" method="POST" enctype="multipart/form-data">
+    <label for="file-upload" class="custom-file-upload">Upload CSV</label>
+    <input type="file" id="file-upload" name="csv" required>
+    <button type="submit">Upload</button>
+  
+  </form>
+
+  
+    <% for(let i = 0; i < files.length; i++) { %>
+      <div class="uploaded-files">
+      <ul>
+        <a href="/view/<%= files[i]._id %>"><%= files[i].name %></a>
+        <a href="/delete/<%= files[i]._id %>"><i class="fa-solid fa-trash"></i></a>
+       </ul> 
+      </div>
+      
+      <% } %>
+  
+</div>
+
+
+
+
